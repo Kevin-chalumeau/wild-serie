@@ -1,13 +1,5 @@
 
-{% extend 'base.html.twig' %}
-<!doctype html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Document</title>
-</head>
-<body>
-    <h1>{{ website }} Bienvenu sur Wild series</h1>
-</body>
-</html>
-
+{% extends 'base.html.twig' %}       
+{% block body%}    
+<h1>Bienvenue sur {{ website }}</h1>   
+{% endblock %}

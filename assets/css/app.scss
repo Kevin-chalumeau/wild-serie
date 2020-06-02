@@ -1,13 +1,54 @@
-// assets/css/app.scss
 // customize some Bootstrap variables
+$dark: #011518;
+$light: #ECF0F5;
+$yellow-ish: #EFF246;
+$blue-ish: #8595AD;
 
-$primary: #2F2504;
-$secondary:#594E36;
+.navbar-dark .navbar-nav .nav-link,
+.navbar .navbar-brand {
+    background-color: $dark;
+}
 
-body{
-    background-color: $primary;
+.navbar-expand-lg {
+    background-color: $dark;
+    height: 6vh;
+}
+
+.home {
+    @mixin homeText ($padding-top, $font-weight, $font-size) {
+        padding-top: $padding-top;
+        font-weight: $font-weight;
+        font-size: $font-size;
+        padding-left: 55vw;
+    }
+
+    object-fit: fill;
+    background: linear-gradient(270deg, #002126 0%, rgba(0, 33, 38, 0.796875) 28.15%, rgba(0, 33, 38, 0) 76.13%), url('../img/home_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 94vh;
+    color: $light;
+    font-family: Poppins, sans-serif;
+    .title {
+        @include homeText (9%, bold, 95px);
+    }
+    .slogan {
+        @include homeText (4vh, normal, 40px);
+        margin-left: 1vw;
+   }
+    .btn {
+        margin-top: 10vh;
+        margin-left: 56vw;
+        padding: 10px;
+        padding-inline: 25px;
+        font-family: Hind Madurai, sans-serif;
+        font-weight: bold;
+        background-color: $yellow-ish;
+    }
 }
 
 
+
 // the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap"; 

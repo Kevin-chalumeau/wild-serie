@@ -5,11 +5,10 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-        {% endblock %}    </head>
+        {% endblock %}
+    </head>
+    <header> {% include 'navbar.html.twig' %} </header>
     <body>
-    {% block header %}
-        {% include "navbar.html.twig" %}
-    {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

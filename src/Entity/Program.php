@@ -23,7 +23,7 @@ class Program
     private $title;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $summary;
 
@@ -55,7 +55,7 @@ class Program
         return $this;
     }
 
-    public function getSummary(): ?int
+    public function getSummary(): ?string
     {
         return $this->summary;
     }

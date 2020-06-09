@@ -1,7 +1,12 @@
-{% extends 'base.html.twig' %} 
-{% block body %}
+{% extends 'base.html.twig' %}{% block body %}
      <h1> Bienvenue !</h1>
-     <h1> QUETE 16 </h1>
+     <h1> QUETE 9 : </h1>
      <br>
-     <a href="/category/add">L'URL renvoi sur la page "ajouter une catégorie"</a>
- {% endblock %}
+    <a href="{{ path('show_category', { 'categoryName': "horreur" }) }}"> L'URL est fonctionnelle et renvoie bien les 3 dernières séries liées à la catégorie "horreur".</a>
+    <br>
+   <a href="{{ path('show_program', { 'programName': "american-horror-story" }) }}">L'URL renvoi sur la page de la série "American Horror Story"</a>
+   <br>
+   <a href="{{ path('show_program', { 'programName': "walking-dead" }) }}">L'URL renvoi sur la page de la série "the walking dead"</a>
+   <br>
+   <a href="{{ path('show_program', { 'programName': "the-haunting-of-hill-house" }) }}">L'URL renvoi sur la page de la série "the haunting of a hill house</a>
+   {% endblock %}

@@ -26,10 +26,10 @@
             </table>
         </div>
         <div>
-            <a class="btn btn-danger" href="{{ path('wild_show_season', {'id': season.id}) }}">Mise à jour</a>
+            <a class="btn btn-danger" href="{{ path('show_season', {'id': season.id}) }}">Mise à jour</a>
         </div>
     </section>
-    <a class="btn btn-dark" href="{{ path('wild_show_program',{'programName': season.program.slug}) }}">Retour à la série</a>
+    <a class="btn btn-dark" href="{{ path('show_program',{'programName': season.program.slug}) }}">Retour à la série</a>
 
     <section class="card text-dark m-3">
         <div class="card-header bg-success">

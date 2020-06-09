@@ -1,35 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Season{% endblock %}
+{% block title %}Episode{% endblock %}
 
 {% block body %}
     <section class="card text-dark m-3 p-3">
         <div class="card-header bg-success">
-            <h1>Saison {{ season.number }} de la série {{ season.program.title }}</h1>
+            <h1>Episode {{ episode.number }} de la série {{ season.program.title }}</h1>
         </div>
         <div class="media">
             <table class="table table-light table-striped table-bordered mt-3">
                 <tbody>
                 <tr>
                     <th class="thead-dark">Série</th>
-                    <td>{{ season.program.title }}</td>
+                    <td>{{ episode.season.program.title }}</td>
                 </tr>
                 <tr>
-                    <th>Année</th>
-                    <td>{{ season.year }}</td>
+                    <th>titre</th>
+                    <td>{{ episode.title }}</td>
                 </tr>
                 <tr>
-                    <th>Description</th>
-                    <td>{{ season.description }}</td>
+                    <th>Number</th>
+                    <td>{{ episode.number }}</td>
+                </tr>
+                 <tr>
+                    <th>synopsis</th>
+                    <td>{{ episode.synopsis }}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div>
-            <a class="btn btn-danger" href="{{ path('wild_show_season', {'id': season.id}) }}">Mise à jour</a>
+            <a class="btn btn-danger" href="{{ path('season_show_season', {'id': season.id}) }}">Mise à jour</a>
         </div>
     </section>
-    <a class="btn btn-dark" href="{{ path('wild_show_program',{'programName': season.program.slug}) }}">Retour à la série</a>
+    <a class="btn btn-dark" href="{{ path('program_show_program',{'programName': season.program.slug}) }}">Retour à la série</a>
 
     <section class="card text-dark m-3">
         <div class="card-header bg-success">

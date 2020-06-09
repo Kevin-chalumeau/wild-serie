@@ -136,5 +136,12 @@ class Program
         return $this;
     }
 
+    public function getSlug(): string
+    {
+        $lowerTitle = \strtolower($this->title);
+        $slug = \str_replace(" ","-", $lowerTitle);
+        return $slug;
+    }
+
     
 }

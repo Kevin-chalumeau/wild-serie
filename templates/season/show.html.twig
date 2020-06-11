@@ -54,7 +54,7 @@
                         <td>{{ episode.number }}</td>
                         <td>{{ episode.title }}</td>
                         <td>
-                            <a class="btn btn-success text-white" href="">Voir</a>
+                            <a class="btn btn-success text-white" href="{{ path('show_episode', {'id' : episode.id}) }}">{{episode.title}}Voir</a>
                         </td>
                         <td>
                             <a class="btn btn-danger text-white" href="">Mettre à jour</a>

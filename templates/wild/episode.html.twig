@@ -15,8 +15,7 @@
             </div>
         </div>
     </section>
-    <a class="btn btn-dark" href="{{ path('show_season', {'id' : episode.season.id}) }}">
-        Retour
-    </a>
+    <a class="btn btn-dark" href="{{ path('show_season', {'id' : episode.id}) }}">{{episode.title}}></a>
+    
 
 {% endblock %}

@@ -11,6 +11,7 @@ use App\Repository\SeasonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 
 
@@ -33,10 +34,17 @@ Class WildController extends AbstractController
                 'No program found in program\'s table .'
             );
         }
+        $form = $this->createForm(
+            ProgramSearchType::class,
+            null,
+            ['method' => Request::METHODE_GET]
+        );
 
         return $this->render(
             'wild/index.html.twig',
-            ['programs' => $programs]
+            ['programs' => $programs,
+            'form' => $form->createView(),
+            ]
         );
     }
 

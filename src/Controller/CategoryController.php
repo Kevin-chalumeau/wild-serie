@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 
+
 class CategoryController extends AbstractController
 {
     /**

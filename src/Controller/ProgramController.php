@@ -2,9 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Season;
-use App\Entity\Category;
-use App\Entity\Episode;
 use App\Entity\Program;
 use App\Form\ProgramType;
 use App\Repository\ProgramRepository;
@@ -19,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProgramController extends AbstractController
 {
     /**
-     * @Route("/", name="Program_index", methods={"GET"})
+     * @Route("/", name="program_index", methods={"GET"})
      */
     public function index(ProgramRepository $programRepository): Response
     {
@@ -42,7 +39,7 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             $entityManager->flush();
 
-            return $this->redirectToRoute('Program_index');
+            return $this->redirectToRoute('program_index');
         }
 
         return $this->render('program/new.html.twig', [

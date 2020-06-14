@@ -1,0 +1,71 @@
+% extends 'base.html.twig' %}
+{% block title %}Season{% endblock %}
+{% block body %}
+    <section class="card text-dark m-3 p-3">
+        <div class="card-header bg-success">
+            <h1>Saison {{ season.number }} de la série {{ season.program.title }}</h1>
+        </div>
+        <div class="media">
+            <table class="table table-light table-striped table-bordered mt-3">
+                <tbody>
+                <tr>
+                    <th class="thead-dark">Série</th>
+                    <td>{{ season.program.title }}</td>
+                </tr>
+                <tr>
+                    <th>Année</th>
+                    <td>{{ season.year }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ season.description }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a class="btn btn-danger" href="{{ path('wild_show_season', {'id': season.id}) }}">Mise à jour</a>
+        </div>
+    </section>
+    <a class="btn btn-dark" href="{{ path('wild_show_program',{'programName': season.program.slug}) }}">Retour à la série</a>
+    <section class="card text-dark m-3">
+        <div class="card-header bg-success">
+            <h3>Liste des épisodes</h3>
+        </div>
+        <div class="media">
+            <table class="table table-light table-striped table-bordered mt-3">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Série</th>
+                    <th>Episode</th>
+                    <th>Titre</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for episode in season.episodes %}
+                    <tr>
+                        <td>{{ season.program.title }}</td>
+                        <td>{{ episode.number }}</td>
+                        <td>{{ episode.title }}</td>
+                        <td>
+                            <a class="btn btn-success text-white" href="{{ path('wild_show_episode', { id: episode.id }) }}">Voir</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger text-white" href="">Mettre à jour</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucun épisode de trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

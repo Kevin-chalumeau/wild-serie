@@ -6,6 +6,7 @@ use App\Entity\Episode;
 use App\Entity\Season;
 use App\Entity\Category;
 use App\Entity\Program;
+use App\Form\ProgramSearchType;
 use App\Repository\EpisodeRepository;
 use App\Repository\SeasonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,6 +35,7 @@ Class WildController extends AbstractController
                 'No program found in program\'s table .'
             );
         }
+
         $form = $this->createForm(
             ProgramSearchType::class,
             null,
@@ -100,7 +102,7 @@ Class WildController extends AbstractController
             );
         }
 
-        return $this->render("wild/category.html.twig",['programs' => $programs,
+        return $this->render("category/show.html.twig",['programs' => $programs,
                                                         'category' => $category,
         ]);
     }
@@ -125,7 +127,7 @@ Class WildController extends AbstractController
         ]);
         $seasonsProgram = $program->getSeasons();
 
-        return $this->render('wild/program.html.twig', [
+        return $this->render('program/show.html.twig', [
             'program' => $program,
             'seasons' =>$seasonsProgram,
         ]);

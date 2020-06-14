@@ -74,7 +74,7 @@ class Program
         return $this->summary;
     }
 
-    public function setSummary(int $summary): self
+    public function setSummary(string $summary): self
     {
         $this->summary = $summary;
 
